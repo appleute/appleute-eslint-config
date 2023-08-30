@@ -4,6 +4,10 @@
   "description": "Shared ESLint configs for Node, Web, React Native, and Expo projects.",
   "main": "default.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Permatech-IT/appleute-eslint-config.git"
+  },
   "scripts": {
     "postinstall": "husky install"
   },
