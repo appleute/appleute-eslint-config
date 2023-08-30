@@ -7,6 +7,9 @@
   "scripts": {
     "postinstall": "husky install"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "eslint": ">=8.48",
     "prettier": ">=3"
