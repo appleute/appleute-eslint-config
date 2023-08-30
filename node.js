@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["universe/node", "universe/shared/typescript-analysis"],
+  extends: ["universe/node", "universe/shared/typescript-analysis", "prettier"],
   env: {
     jest: true,
   },
