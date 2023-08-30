@@ -92,3 +92,15 @@ In VS Code, you can enable format on save by adding this config to the file `.vs
   }
 }
 ```
+
+## Develop
+
+### Publish
+
+Use [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) to increment major, minor or patch version
+
+Then publish using:
+
+```sh
+npm publish
+```
