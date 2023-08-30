@@ -13,6 +13,12 @@ Shared ESLint configs for Node, Web, React Native, and Expo projects.
 
 ### Configuration
 
+Install this package
+
+```sh
+yarn add -D @appleute/eslint-config
+```
+
 Import this config into your own ESLint configuration using the extends option. ESLint checks both package.json and .eslintrc.\* files for its configuration:
 
 ### package.json
@@ -57,6 +63,7 @@ yarn add -D husky lint-staged
 
 ```json
 {
+  ...
   "scripts": {
     ...
     "postinstall": "husky install"
