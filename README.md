@@ -56,9 +56,7 @@ yarn add -D husky lint-staged
 2\. Configure package.json
 
 ```json
-// package.json
 {
-  ...
   "scripts": {
     ...
     "postinstall": "husky install"
