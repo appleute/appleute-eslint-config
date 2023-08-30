@@ -13,10 +13,10 @@ Shared ESLint configs for Node, Web, React Native, and Expo projects.
 
 ### Configuration
 
-Install this package
+Install this package and peer dependencies
 
 ```sh
-yarn add -D @appleute/eslint-config
+yarn add -D eslint prettier @appleute/eslint-config
 ```
 
 Import this config into your own ESLint configuration using the extends option. ESLint checks both package.json and .eslintrc.\* files for its configuration:
