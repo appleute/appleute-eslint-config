@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: "./default.js",
+  extends: "./node.js",
 };

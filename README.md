@@ -41,6 +41,8 @@ module.exports = {
 
 ### .prettierrc.js
 
+You can import the default prettier config used by the package into yours.
+
 ```js
 const prettierRc = requrire("@appleute/eslint-config/.prettierrc.js");
 

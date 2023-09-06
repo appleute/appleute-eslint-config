@@ -9,6 +9,7 @@
     "url": "https://github.com/Permatech-IT/appleute-eslint-config.git"
   },
   "scripts": {
+    "test": "jest",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"

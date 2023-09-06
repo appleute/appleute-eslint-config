@@ -3,6 +3,7 @@ module.exports = {
   env: {
     jest: true,
   },
+  parser: "@typescript-eslint/parser",
   plugins: ["unused-imports"],
   overrides: [
     {
