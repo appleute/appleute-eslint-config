@@ -66,7 +66,7 @@ You can import the default prettier config used by the package into yours.
 #### .prettierrc.js
 
 ```js
-const prettierRc = requrire("@appleute/eslint-config/.prettierrc.js");
+const prettierRc = require("@appleute/eslint-config/.prettierrc.js");
 
 module.exports = {
   ...prettierRc,
