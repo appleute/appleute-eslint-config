@@ -19,9 +19,13 @@ Install this package and peer dependencies
 yarn add -D eslint prettier @appleute/eslint-config
 ```
 
+### Configure ESLint
+
 Import this config into your own ESLint configuration using the extends option. ESLint checks both package.json and .eslintrc.\* files for its configuration:
 
-### package.json
+> There is no need to configure both package.json and .eslintrc.js, any one will do.
+
+#### Either add this to `package.json`
 
 ```json
 {
@@ -31,7 +35,7 @@ Import this config into your own ESLint configuration using the extends option. 
 }
 ```
 
-### .eslintrc.js
+#### or create `.eslintrc.js` with the following lines
 
 ```js
 module.exports = {
@@ -39,9 +43,11 @@ module.exports = {
 };
 ```
 
-### .prettierrc.js
+### Configure Prettier
 
 You can import the default prettier config used by the package into yours.
+
+#### .prettierrc.js
 
 ```js
 const prettierRc = requrire("@appleute/eslint-config/.prettierrc.js");
@@ -49,6 +55,14 @@ const prettierRc = requrire("@appleute/eslint-config/.prettierrc.js");
 module.exports = {
   ...prettierRc,
 };
+```
+
+#### .prettierignore
+
+You can copy the `.prettierignore` file as is from the package.
+
+```sh
+cp node_modules/@appleute/eslint-config/.prettierignore .
 ```
 
 ### Commit hooks
