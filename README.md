@@ -13,10 +13,26 @@ Shared ESLint configs for Node, Web, React Native, and Expo projects.
 
 ### Configuration
 
+#### New project
+
 Install this package and peer dependencies
 
 ```sh
 yarn add -D eslint prettier @appleute/eslint-config
+```
+
+#### Existing project
+
+Install this package and update peer dependencies
+
+```sh
+yarn add -D eslint prettier@latest @appleute/eslint-config@latest
+```
+
+This package already inclues eslint plugins and configs, so you can remove them if you have them installed.
+
+```sh
+yarn remove @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-next eslint-config-universe eslint-plugin-unused-imports
 ```
 
 ### Configure ESLint
