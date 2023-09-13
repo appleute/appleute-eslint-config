@@ -25,6 +25,9 @@ module.exports = {
     "/dist",
   ],
   rules: {
+    // use default import order
+    "import/order": ["warn"],
+
     // use plugin `unused-imports` instead of `no-unused-vars` rule to auto fix unused imports
     "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
