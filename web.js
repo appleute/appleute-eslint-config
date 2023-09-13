@@ -29,8 +29,13 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
 
-    // use default import order
-    "import/order": ["warn"],
+    // use default import order and ignore empty lines
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "ignore",
+      },
+    ],
 
     // use plugin `unused-imports` instead of `no-unused-vars` rule to auto fix unused imports
     "@typescript-eslint/no-unused-vars": "off",
