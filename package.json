@@ -1,6 +1,6 @@
 {
   "name": "@appleute/eslint-config",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Shared ESLint configs for Node, Web, React Native, and Expo projects.",
   "main": "default.js",
   "license": "MIT",
