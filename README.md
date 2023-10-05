@@ -2,12 +2,15 @@
 
 Shared ESLint configs for Node, Web, React Native, and Expo projects.
 
-| Stack        | Config                           |
-| ------------ | -------------------------------- |
-| Node         | @appleute/eslint-config/node     |
-| React Native | @appleute/eslint-config/native   |
-| Web          | @appleute/eslint-config/web      |
-| Web (NextJS) | @appleute/eslint-config/web-next |
+| Stack                        | Config                                           |
+| ---------------------------- | ------------------------------------------------ |
+| Server NestJS (experimental) | @appleute/eslint-config/server-nest-experimental |
+| Node                         | @appleute/eslint-config/node                     |
+| React Native                 | @appleute/eslint-config/native                   |
+| Web (experimental)           | @appleute/eslint-config/web-experimental         |
+| Web                          | @appleute/eslint-config/web                      |
+| Web (NextJS experimental)    | @appleute/eslint-config/web-next-experimental    |
+| Web (NextJS)                 | @appleute/eslint-config/web-next                 |
 
 ## Usage
 
@@ -26,7 +29,7 @@ yarn add -D eslint prettier @appleute/eslint-config
 Install this package and update peer dependencies
 
 ```sh
-yarn add -D eslint prettier@latest @appleute/eslint-config@latest
+yarn add -D eslint@latest prettier@latest @appleute/eslint-config
 ```
 
 This package already inclues eslint plugins and configs, so you can remove them if you have them installed.
@@ -34,6 +37,8 @@ This package already inclues eslint plugins and configs, so you can remove them 
 ```sh
 yarn remove @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-next eslint-config-universe eslint-plugin-unused-imports
 ```
+
+> @appleute/eslint-config@^2 has strict type checks, if this breaks your existing project completely the use @appleute/eslint-config@1 for now.
 
 ### Configure ESLint
 
