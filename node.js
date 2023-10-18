@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: ["unused-imports"],
   ignorePatterns: [
+    ".eslintrc.js",
     "/node_modules",
     "/package-lock.json",
     "/yarn.lock",
