@@ -131,6 +131,19 @@ Create `.vscode/settings.json` at the root of your repository.
 }
 ```
 
+### TSConfig
+
+Ensure strict is turned on:
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "strictPropertyInitialization": false
+  }
+}
+```
+
 ## Develop
 
 ### Publish
