@@ -1,16 +1,19 @@
 {
   "name": "@appleute/eslint-config",
   "version": "2.0.2",
-  "description": "Shared ESLint configs for Node, Web, React Native, and Expo projects.",
-  "main": "default.js",
+  "description": "Shared ESLint configs for [appleute](https://github.com/appleute) projects.",
+  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Permatech-IT/appleute-eslint-config.git"
   },
   "scripts": {
-    "test": "jest",
-    "postinstall": "husky install",
+    "format": "prettier . --write",
+    "lint": "eslint . --fix",
+    "lint:report": "eslint . --output-file eslint_report.json --format json",
+    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" jest",
+    "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
   },
@@ -18,24 +21,31 @@
     "access": "public"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
-    "eslint-config-next": "^13.4.19",
-    "eslint-config-universe": "^12.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "@eslint/compat": "^1.1.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.11.1",
+    "eslint-config-next": "^14.2.14",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "typescript-eslint": "^8.8.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.48",
-    "prettier": ">=3"
+    "eslint": ">=9",
+    "prettier": ">=3",
+    "typescript": "~5.5"
   },
   "devDependencies": {
-    "eslint": "^8.48.0",
-    "husky": "^8.0.3",
-    "jest": "^29.6.4",
-    "lint-staged": "^14.0.1",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.11.1",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.10",
     "pinst": "^3.0.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "prettier": "^3.3.3",
+    "typescript": "~5.5"
   },
   "husky": {
     "hooks": {

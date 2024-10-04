@@ -1,16 +1,20 @@
 # Appleute ESLint Config
 
-Shared ESLint configs for Node, Web, React Native, and Expo projects.
+Shared ESLint configs for [appleute](https://github.com/appleute) projects.
 
-| Stack                        | Config                                           |
-| ---------------------------- | ------------------------------------------------ |
-| Server NestJS (experimental) | @appleute/eslint-config/server-nest-experimental |
-| Node                         | @appleute/eslint-config/node                     |
-| React Native                 | @appleute/eslint-config/native                   |
-| Web (experimental)           | @appleute/eslint-config/web-experimental         |
-| Web                          | @appleute/eslint-config/web                      |
-| Web (NextJS experimental)    | @appleute/eslint-config/web-next-experimental    |
-| Web (NextJS)                 | @appleute/eslint-config/web-next                 |
+| Stack     | Config                                     |
+| --------- | ------------------------------------------ |
+| (Default) | @appleute/eslint-config                    |
+| Node      | @appleute/eslint-config/node               |
+| React     | @appleute/eslint-config/react              |
+| Next.js   | @appleute/eslint-config/next (Coming Soon) |
+| Expo      | @appleute/eslint-config/expo (Coming Soon) |
+
+## TODO
+
+- Config for next.js, waiting for support to be added. See https://github.com/vercel/next.js/issues/64453
+- Config for expo, waiting for support to be added. See https://github.com/expo/expo/blob/main/packages/eslint-config-expo/package.json
+- Sort imports using eslint `sort-imports` or `eslint-plugin-import`
 
 ## Usage
 
@@ -32,47 +36,29 @@ Install this package and update peer dependencies
 yarn add -D eslint@latest prettier@latest @appleute/eslint-config
 ```
 
-This package already inclues eslint plugins and configs, so you can remove them if you have them installed.
-
-```sh
-yarn remove @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-next eslint-config-universe eslint-plugin-unused-imports
-```
-
-> @appleute/eslint-config@^2 has strict type checks, if this breaks your existing project completely the use @appleute/eslint-config@1 for now.
+This package already inclues eslint plugins and configs, so you can remove them if you have any installed.
 
 ### Configure ESLint
 
-Import this config into your own ESLint configuration using the extends option. ESLint checks both package.json and .eslintrc.\* files for its configuration:
-
-> There is no need to configure both package.json and .eslintrc.js, any one will do.
-
-#### Either add this to `package.json`
-
-```json
-{
-  "eslintConfig": {
-    "extends": "@appleute/eslint-config/web"
-  }
-}
-```
-
-#### or create `.eslintrc.js` with the following lines
+Create a `eslint.config.js` in your project root and import the desired config.
 
 ```js
-module.exports = {
-  extends: "@appleute/eslint-config/web",
-};
+const nodeConfig = require("@appleute/eslint-config/node");
+
+/** @type import("eslint").Linter.Config[] */
+module.exports = [...nodeConfig];
 ```
 
 ### Configure Prettier
 
-You can import the default prettier config used by the package into yours.
+Create a `.prettierrc.js` in your project root and import the prettier config.
 
 #### .prettierrc.js
 
 ```js
 const prettierRc = require("@appleute/eslint-config/.prettierrc.js");
 
+/** @type import("prettier").Config */
 module.exports = {
   ...prettierRc,
 };
@@ -94,6 +80,8 @@ Setup a pre-commit hook using husky and lint-staged to automatically lint and pr
 
 ```sh
 yarn add -D husky lint-staged
+# Add pinst ONLY if your package is not private
+yarn add -D pinst
 ```
 
 2\. Configure package.json
@@ -102,8 +90,11 @@ yarn add -D husky lint-staged
 {
   ...
   "scripts": {
-    ...
-    "postinstall": "husky install"
+    // Yarn doesn't support prepare script
+    "postinstall": "husky",
+    // Include this if publishing to npmjs.com
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "husky": {
     "hooks": {
@@ -120,20 +111,23 @@ yarn add -D husky lint-staged
 3\. Add pre-commit hook
 
 ```sh
-npx husky install
-npx husky add .husky/pre-commit "npx lint-staged"
+yarn husky
+echo "npx lint-staged" > .husky/pre-commit
 ```
 
-### Format on save
+### VSCode Config
 
-In VS Code, you can enable format on save by adding this config to the file `.vscode/settings.json` at the root of your repository.
+Configure your vscode to allow formatting on save, and use the typescript verison configured by the project instead of the vscode version.
+
+Create `.vscode/settings.json` at the root of your repository.
 
 ```json
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+    "source.fixAll.eslint": "always"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
 ```
 

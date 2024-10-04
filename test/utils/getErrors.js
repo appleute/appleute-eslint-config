@@ -4,7 +4,6 @@ const eslint = require("eslint");
 module.exports = function getErrors(configFile, fileToTest) {
   const ESLint = eslint.ESLint;
   const instance = new ESLint({
-    useEslintrc: false,
     overrideConfigFile: configFile,
   });
 
