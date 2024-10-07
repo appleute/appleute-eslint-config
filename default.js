@@ -147,6 +147,12 @@ module.exports = [
       // allow void type to be used
       "@typescript-eslint/no-confusing-void-expression": "off",
 
+      // do not use regexp exec, prefer string match instead
+      "@typescript-eslint/prefer-regexp-exec": "off",
+
+      // do not use reduce type parameter as it is hard to read
+      "@typescript-eslint/prefer-reduce-type-parameter": "off",
+
       // allow types in template expressions
       "@typescript-eslint/restrict-template-expressions": [
         "error",
