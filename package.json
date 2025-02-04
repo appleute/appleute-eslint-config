@@ -1,6 +1,6 @@
 {
   "name": "@appleute/eslint-config",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Shared ESLint configs for [appleute](https://github.com/appleute) projects.",
   "main": "default.js",
   "license": "MIT",
